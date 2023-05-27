@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        sala = 9
+        professor = prompt('O professor esta presente? (s/n)')
+
+        console.log(professor)
+        if (professor == 's') {
+            alert('hoje vai ter aula na sala ' + sala)
+
+            alunos = prompt('digite a quantidade de alunos');
+            if (alunos > 10) {
+                alert('mais da metade veio a aula')
+            } else if (alunos > 5) {
+                alert('poucos alunos veio a aula')
+            } else {
+                alert('poucos alunos, pode cancelar a aula')
+            }
+        } else {
+            alert('Aula cancelada, professor não veio')
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
