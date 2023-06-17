@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="valor1">Valor 1</label>
+    <input type="text" id="valor1">
+
+    <label for="valor2">Valor 2</label>
+    <input type="text" id="valor2">
+
+    <label for="resultado">Resultado</label>
+    <input type="text" id="resultado" disabled>
+    <br><br>
+    <button onclick="SomaDoisNumeros()">Exercicio 1</button>
+    <button onclick="ImparPar()">Exercicio 2</button>
+    <button onclick="MaiorNumeroEntreDois()">Exercicio 3</button>
+    <button onclick="Fibonacci()">Exercicio 8</button>
+    <button onclick="SomaPar()">Exercicio 11</button>
+    <button onclick="Tabuada()">Tabuada</button>
+
+
+
+</body>
+<script>
+
+    function Tabuada() {
+
+        // for (let contador = 1; contador < 11; contador += 1) {
+        //     console.log(contador)
+        // }
+
+        contador = 11
+
+        while (contador < 10) {
+            contador++
+            console.log(contador)
+        }
+
+        do {
+            console.log(contador)
+        } while (contador < 10);
+
+    }
+
+    function SomaDoisNumeros() {
+        //1. Crie uma função que receba dois números como parâmetros e retorne a soma deles.
+        valor1 = parseInt(prompt('digite o valor 1: '))
+        valor2 = parseInt(prompt('digite o valor 2: '))
+
+        alert('A soma dos valores é: ' + (valor1 + valor2))
+
+    }
+
+    function ImparPar() {
+        //2. Escreva um programa que verifique se um número é par ou ímpar.
+        numero = parseInt(prompt('digite um numero para ser verificado'))
+
+        if (numero % 2 == 0) {
+            alert('O numero ' + numero + ' é PAR')
+        } else {
+            alert('O numero ' + numero + ' é IMPAR')
+        }
+    }
+
+    function MaiorNumeroEntreDois() {
+        //3. Escreva uma função que retorne o maior valor entre dois números.
+        valor1 = document.getElementById('valor1').value
+        valor2 = document.getElementById('valor2').value
+
+        if (valor1 > valor2) {
+            document.getElementById('resultado').value = valor1
+        } else if (valor2 > valor1) {
+            document.getElementById('resultado').value = valor2
+        } else {
+            alert('Os valores são iguais!!!')
+        }
+    }
+
+    function Fibonacci() {
+
+        valor1 = document.getElementById('valor1').value
+
+        n0 = 0
+        n1 = 1
+        resultado = n0 + n1
+
+        if (valor1 == 1) {
+            resultado = n0
+
+        } else if (valor1 == 2) {
+            resultado = n1
+
+        } else if (valor1 > 2) {
+
+            for (let i = 0; i < valor1 - 2; i++) {
+                resultado = n0 + n1
+                n0 = n1
+                n1 = resultado
+            }
+        } else {
+            alert('Valor invalido')
+        }
+        document.getElementById('resultado').value = resultado
+    }
+
+    function SomaPar() {
+        valor = document.getElementById('valor1').value
+        variavel = 0
+        for (let i = 0; i <= valor; i++) {
+            if (i % 2 == 0) {
+                variavel += i
+            }
+        }
+        document.getElementById('resultado').value = variavel
+    }
+
+</script>
+
+</html>
