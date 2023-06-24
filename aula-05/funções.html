@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+
+<body>
+    <button onclick="Page01()">Page 1</button>
+    <button onclick="Page02()">Page 2</button>
+    <button onclick="Page03()">Page 3</button>
+
+    <div id="pagina-01"></div>
+    <div id="pagina-02"></div>
+    <div id="pagina-03"></div>
+    
+</body>
+<script>
+    /**12.Crie uma tela onde contenha 3 botões(site 1, site 2, site 3), ao clicar em cada botão o site deve ser alterado com elementos diferentes
+    Primeiro site: deve conter um título, parágrafo, imagem 
+    Segundo site: deve conter uma lista não numerada de 5 itens e uma lista numerada de 5 itens
+    Terceiro site: deverá apresentar um vídeo do youtube(iframe)e um botão que redirecionará para a pagina original
+    */
+
+    function Page01() {
+        div1 = document.getElementById('pagina-01')
+
+        h1 = '<h1>Eu sou um titulo</h1>'
+        div1.innerHTML = h1
+
+        p = document.createElement('p')
+        p.innerHTML = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor provident consequuntur tempora, corrupti dignissimos totam ab iusto neque unde, maiores placeat? Suscipit cupiditate labore maiores consectetur commodi, cumque ducimus nulla?'
+
+        div1.append(p)
+
+        img = document.createElement('img') 
+        img.src = 'imagem.jpg'
+        img.alt = 'é apenas uma imagem'
+        img.heigth = 200
+        img.width = 200
+        div1.append(img)
+    }
+
+    function Page02() {
+
+        valores = ['bispo', 'eduardo', 'larissa', 'gabriel', 'josias', 'humberto']
+
+        div2 = document.getElementById('pagina-02');
+
+        // nao_ordenada = document.createElement('ul')
+        // ordenada = document.createElement('ol')
+        
+        CriaListas(valores, 'ul', div2)
+        CriaListas(valores, 'ol', div2)
+
+    }
+    function CriaListas(array, tipo, div){
+
+        elemento = document.createElement(tipo)
+
+        for (let i = 0; i < array.length; i++ ) {
+            li = document.createElement('li')
+            li.innerHTML = array[i]
+            elemento.append(li)
+        }
+        div.append(elemento)
+    }
+
+    function Page03(){
+        // <iframe width="560" height="315" src="https://www.youtube.com/embed/9OGh7wv806Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>   </iframe>
+        // <a href=""> </a>
+
+        link = 'https://www.youtube.com/embed/9OGh7wv806Y'
+
+        div3 = document.getElementById('pagina-03')
+        iframe = document.createElement('iframe')
+        iframe.width = 300
+        iframe.heigth = 560
+        iframe.src = link
+        iframe.title = 'YouTube video player'
+        iframe.frameborder = 0
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        
+        a = document.createElement('a')
+        a.href = link
+        a.innerHTML = 'Tuca Oliveira - Será que eu tô gostando dela?'
+
+        div3.append(iframe)
+        div3.innerHTML += '<br>'
+        div3.append(a)
+        
+    }
+
+
+
+</script>
+
+</html>

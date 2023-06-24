@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="Funcao1()">Função 1</button>
+    <button onclick="Funcao2('funções')">Função 2</button>
+    <button onclick="Funcao4(5, 10)">Função 3</button>
+</body>
+
+<script>
+    function Funcao1(){
+        alert('Eu sou uma função')
+    }
+
+    function Funcao2(parametro){
+        alert('Eu tenho um parametro e ele é: ' + parametro)
+    }
+
+    function Funcao3(n1, n2){
+        total = n1 + n2;
+        return total
+    }
+
+    function Funcao4(numero1, numero2){
+
+        alert('total da soma: ' + Funcao3(numero1, numero2))
+    }
+    console.log(Funcao3(10, 30))
+
+</script>
+
+</html>
