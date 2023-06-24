@@ -7,6 +7,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background: url(imagem.jpg);
         }
         a {
             text-decoration: none;
@@ -55,6 +56,15 @@
 </body>
 
 <script>
-   
+   button = document.getElementById('nao')
+   height = window.innerHeight - 50
+   width = window.innerWidth - 50
+
+    button.addEventListener('mouseover', function(){
+        button.style.position = 'absolute';
+        button.style.top = Math.random() * height + 'px'
+        button.style.left = Math.random() * width + 'px'
+
+    })
 </script>
 </html>
