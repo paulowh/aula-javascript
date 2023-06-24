@@ -12,6 +12,7 @@
         color: white;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
+        background: url(imagem.jpg);
     }
 
     .calculadora {
@@ -69,37 +70,73 @@
 
             <table>
                 <tr>
-                    <td><button class="botao">C </td>
-                    <td><button class="botao">< </td>
-                    <td><button class="botao">/ </button></td>
-                    <td><button class="botao">* </button></td>
+                    <td><button onclick="Limpar('C')" class="botao">C</button></td>
+                    <td><button onclick="Limpar('<')" class="botao"><</button></td>
+                    <td><button onclick="Operadores('/')" class="botao">/</button></td>
+                    <td><button onclick="Operadores('*')" class="botao">*</button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao">7 </button></td>
-                    <td><button class="botao">8 </button></td>
-                    <td><button class="botao">9 </button></td>
-                    <td><button class="botao">- </button></td>
+                    <td><button onclick="Valores(7)" class="botao">7</button></td>
+                    <td><button onclick="Valores(8)" class="botao">8</button></td>
+                    <td><button onclick="Valores(9)" class="botao">9</button></td>
+                    <td><button onclick="Operadores('-')" class="botao">- </button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao">4 </button></td>
-                    <td><button class="botao">5 </button></td>
-                    <td><button class="botao">6 </button></td>
-                    <td><button class="botao">+ </button></td>
+                    <td><button onclick="Valores(4)" class="botao">4</button></td>
+                    <td><button onclick="Valores(5)" class="botao">5</button></td>
+                    <td><button onclick="Valores(6)" class="botao">6</button></td>
+                    <td><button onclick="Operadores('+')" class="botao">+ </button></td>
                 </tr>
                 <tr>
-                    <td><button class="botao">1 </button></td>
-                    <td><button class="botao">2 </button></td>
-                    <td><button class="botao">3 </button></td>
-                    <td rowspan="2"><button class="botao" style="height: 106px;">= </button></td>
+                    <td><button onclick="Valores(1)" class="botao">1</button></td>
+                    <td><button onclick="Valores(2)" class="botao">2</button></td>
+                    <td><button onclick="Valores(3)" class="botao">3</button></td>
+                    <td rowspan="2"><button onclick="Calcular('=')" class="botao" style="height: 106px;">= </button></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><button class="botao" style="width: 106px;">0 </button></td>
+                    <td colspan="3"><button onclick="Valores(0)" class="botao" style="width: 106px;">0 </button></td>
                 </tr>
             </table>
         </div>
     </div>
 </body>
 <script>
+    var valor1 = 0
+    var operador = ''
+
+    function Valores(n){
+        resultado = document.getElementById('resultado')
+        resultado.innerHTML += n
+        console.log(n)
+    }
+
+    function Operadores(op){
+        valor1 = parseInt(document.getElementById('resultado').innerHTML)
+        operador = op
+        document.getElementById('resultado').innerHTML = ''
+        console.log(op)
+    }
+
+    function Calcular(calc){
+        valor2 = parseInt(document.getElementById('resultado').innerHTML)
+
+        if (operador == '+'){
+            total = valor1 + valor2
+        } else if (operador == '-') {
+            total = valor1 - valor2  
+        } else if (operador == '*'){
+            total = valor1 * valor2
+        } else if (operador == '/'){
+            total = valor1 / valor2
+        }
+
+        document.getElementById('resultado').innerHTML = total
+    }
+
+    function Limpar(limpar){
+
+    }
+
     //aqui vem seu codigo
 </script>
 
