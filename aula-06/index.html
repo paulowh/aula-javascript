@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="Strogonoff()">Strogonoff</button>
+</body>
+<script>
+    // principais = []
+    // carne
+    // creme de leite
+    // mostarda
+
+    // extras = []
+    // bacon
+    // cogumelo
+    // cebola
+
+    // verificar os ingrediente principais 
+    //     poderia verificar com o IF se tem TODOS os ingrediente principais
+    //     -- perguntar ao usuario se tem os ingredientes
+    //         -- deve conter todos os ingredientes principais
+    //         -- não pode esta faltando nada !!!
+
+
+    // verificar se possui ingrediente extras
+    //     não impede de prosseguir com a receita
+    //     verificar se os extras são aceitos
+    //     -- percorrer toda a minha lista para verificar se o ingrediente que o usuario digitou esta nela
+    //         -- se estiver permitir, se não avisar o usuario
+    function Strogonoff() {
+        carne = prompt('Você tem carne? (s/n)')
+        creme = prompt('Você tem creme de leite? (s/n)') 
+        mostarda = prompt('Você tem mostarda? (s/n)')
+
+        if(carne == 's' && creme == 's' && mostarda == 's'){
+            alert('Você consegue continuar a receita')
+        }
+        extra = [ 'bacon', 'cogumelo', ' cebola']
+        for (let i = 0; i < extra.length; i++) {
+            const element = extra[i];
+            
+        }
+    }
+</script>
+
+</html>
+
+
+
+
+
+<!-- presenca > 70
+nota > 8
+verificar a nota
+verificar a presenca
+
+saber se as notas verificas atendende ao requisito minimo
+quando elas atende?
+se a nota for maior ou igual que 8 E presenca for mairo que 70 O aluno estara aprovado !!!
+mas se a presenca for maior que 70 e a nota for maior que 5 e menor que 8 ele pode fazer a prova de recuperação
+MASSS se a prensença for menor que 70 ele esta reprovado direto !!!!
+
+final eu tenho o meu prato pronto, com todos os conteudos que foram colocados -->
