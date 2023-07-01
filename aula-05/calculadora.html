@@ -107,7 +107,6 @@
     function Valores(n){
         resultado = document.getElementById('resultado')
         resultado.innerHTML += n
-        console.log(n)
     }
 
     function Operadores(op){
@@ -134,7 +133,25 @@
     }
 
     function Limpar(limpar){
+        if (limpar == 'C'){
+            document.getElementById('resultado').innerHTML = ''
+            valor1 = 0
+            valor2 = 0
+            operador = ''
+            total = 0
+        }
 
+        if (limpar == '<'){
+            valor = document.getElementById('resultado').innerHTML
+            valor = valor.split('')
+            novo_valor = ''
+            
+            for (let i = 0; i < valor.length - 1 ; i++) {
+                novo_valor += valor[i]
+            }
+
+            document.getElementById('resultado').innerHTML = novo_valor
+        }
     }
 
     //aqui vem seu codigo
