@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .livro {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 4px;
+        }
+
+        .livro .titulo {
+            font-weight: bold;
+        }
+
+        .livro .autor {
+            font-style: italic;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Gerenciamento de Biblioteca</h1>
+
+    <input type="text" id="inputTitulo" placeholder="Título do livro">
+    <input type="text" id="inputAutor" placeholder="Autor do livro">
+    <button onclick="Objeto()">Adicionar livro</button>
+
+    <div id="listaLivros"></div>
+
+    <script>
+        // Seu codigo vem aqui !!!!
+
+        var biblioteca = {
+            livros: [],
+            adicionarLivros: function (tituloInput, autorInput) {
+                var novoLivro = {
+                    titulo: tituloInput,
+                    autor: autorInput
+                }
+
+                this.livros.push(novoLivro)
+                this.exibirLivros()
+            },
+            exibirLivros: function () {
+                listaLivroDIV = document.getElementById('listaLivros')
+
+                for (let i = 0; i < this.livros.length; i++) {
+                    livro = this.livros[i]
+
+                    livroDIV = document.createElement('div')
+                    livroDIV.classList.add('livro')
+
+                    tituloSPAN = document.createElement('span')
+                    tituloSPAN.textContent = livro.titulo
+                    tituloSPAN.classList.add('titulo')
+                    livroDIV.appendChild(tituloSPAN)
+
+                    autorSPAN = document.createElement('span')
+                    autorSPAN.textContent = livro.autor
+                    autorSPAN.classList.add('autor')
+                    livroDIV.appendChild(autorSPAN)
+
+                    listaLivroDIV.appendChild(livroDIV)
+
+                }
+
+            }
+        }
+
+        function Objeto() {
+            titulo = document.getElementById('inputTitulo').value
+            autor = document.getElementById('inputAutor').value
+
+            biblioteca.adicionarLivros(titulo, autor)
+
+            console.log(biblioteca.livros)
+
+            console.log(titulo + ' ' + autor)
+        }
+    </script>
+</body>
+
+</html>
